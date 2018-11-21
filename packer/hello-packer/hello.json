@@ -1,0 +1,22 @@
+{
+    "builders":[
+        {     
+            "type": "amazon-ebs",
+            "access_key": "AKIAJETDFAOW37I4Q3OQ",
+            "secret_key": "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",
+            "region": "us-east-1",
+            "source_ami": "ami-0ac019f4fcb7cb7e6",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "packer-quick-start {{timestamp}}"
+        }
+    ],
+    "provisioners":[
+        {
+            "type": "shell",
+            "inline": ["sudo apt-get update","sudo apt-get install tree"]
+
+        }
+    ]
+    
+  }
