@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: installing tomcat
+    apt:
+      name: tomcat8
+      state: present
+      update_cache: yes
+  handlers:
+  - name: restart tomcat8
+    service: 
+     name: tomcat8
+     state: restarted
+     enabled: yes
+

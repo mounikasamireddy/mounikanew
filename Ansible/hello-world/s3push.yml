@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install tomcat8
+    apt:
+     name: tomcat8
+     state: present
+     update_cache: yes
+  - name: deploying gameoflife war file
+    get_url:
+      url: https://s3.amazonaws.com/name10/gameoflife.war
+      dest: /var/lib/tomcat8/webapps/gameoflife.war
+    notify: restart tomcat8
+  handlers:
+  - name: restart tomcat8
+    service:
+     name: tomcat8
+     state: restarted
+     enabled: yes

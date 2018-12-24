@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: sample-rc
+spec:
+  replicas: 2
+  selector:
+    app: mounikavenna/docker1
+template:
+  metadata:
+    lables: mounikavenna/docker1
+    app: docker
+spec:
+  containers:
+  - name: sample-pod
+    image: mounikavenna/docker1
+    ports: 
+    - containerPort: 80

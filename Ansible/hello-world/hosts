@@ -1,0 +1,11 @@
+[webserver]
+ip-172-31-94-224.ec2.internal
+
+
+[DBserver]
+ip-172-31-90-2.ec2.internal
+
+[ubuntu]
+localhost
+ip-172-31-94-224.ec2.internal
+ip-172-31-90-2.ec2.internal
